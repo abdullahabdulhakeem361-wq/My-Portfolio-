@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial,  sans-serif;
+    font-size: 15pt;
+    line-height: 1.6;
+    background: #0f172a;
+    color: white;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+}
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+.navbar-links a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.hero{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 0;
+}
+.profile-picture {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    padding: 4px;
+    background: #7f1d1d;
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+.profile-picture::before{
+    content: "";
+    position: absolute;
+    inset: -50%;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 0deg, transparent 280deg, rgba(239, 68, 68, 0.2)300deg, rgba(248, 113, 113, 1)340deg, rgba(239, 68, 68, 1)355deg, transparent 360deg);
+    animation: borderGlow 2.5s linear infinite;
+    z-index: -1;
+    filter: blur(2px);
+}
+@keyframes borderGlow{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}  
+.about{
+    padding: 80px 0;
+    text-align: center;
+}
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.about p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.8;
+}
+.projects {
+    padding: 80px 0;
+    text-align: center;
+}
+.projects h2{
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+.project-container{
+    display: flex;
+    justify-content: center;
+}
+.project-card{
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background: #1e293b;
+    border-radius: 16px;
+    text-align: left;
+}
+.project-card h3{
+    font-size: 22px;
+    margin-bottom: 15px;
+} 
+.project-card{
+    font-size: 16px;
+    line-height: 1.7;
+}
+.contact {
+    padding: 80px 0;
+    text-align: center;
+}
+.contact h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.contact p{
+    margin-bottom: 25px;
+    font-size: 17px;
+}
+.contact a{
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid rgba(255, 80, 80, 0.7);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.contact a:hover{
+    background: rgba(255, 80, 80, 0.15);
+    box-shadow: 0 0 15px rgba(255, 80, 80, 0.35);
+}
+footer{
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid  rgba(255, 80, 80, 0.2);
+}
+footer p{
+    font-size: 14px;
+    color: #94a3b8;
+}
+@media (max-width: 769px) {
+    .container{
+        padding: 0 15px;
+    }
+    .navbar{
+        padding: 20px 10;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-links{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        width: 100%;
+        margin-top: 10px;
+        
+    }
+    .navbar-links a{
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-links a{
+        display: block;
+        width: 100%;
+        font-size: 14px;
+    }
+    .hero{
+        min-height: 75vh;
+        padding: 40px 0;
+    }
+    .profile-picture{    
+    width: 150px;
+    height: 150px;
+    } .hero h1{
+        font-size: 32px;
+    }
+    .hero h2 {
+        font-size: 22px;
+    }
+    .hero-text{
+        max-width: 500px;
+        font-size: 15px;
+    } 
+    .about,
+    .projects,
+    .contact{
+        padding: 60px 0;
+    }
+    .about h2,
+    .projects h2,
+    .contact h2{
+        font-size: 28px;
+    }
+    .project-card{
+        padding: 25px;
+    }
+}
