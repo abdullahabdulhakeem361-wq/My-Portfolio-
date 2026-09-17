@@ -5,21 +5,33 @@ navlinks.forEach(function(link) {
     event.preventDefault();
     const targetId = link.getAttribute('href');
     const targetSection = document.querySelector(targetId);
+    if (targetSection) {
     targetSection.scrollIntoView({
       behavior: 'smooth'
     });
-    
+    }
   });
 });
 const projectButton = document.querySelectorAll('.project-button');
 projectButton.forEach(function(button) {
-  button.addEventListener('click', function() {
+  ['click', 'touchend'].forEach(function(eventType) {
+  button.addEventListener(eventType, function(event) {
+    event.stopPropagation();
+    event.preventDefault();
+    const url = button.getAttribute('href');
+    if (url && url !=='#') {
+      window.location.href = url;
+    }
     console.log('project button click');
+  });
   });
 });
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach(function(card) {
   card.addEventListener('click', function() {
+    if (event.target.tagName === 'A') {
+      return;
+    }
     projectCards.forEach(function(item) {
       item.classList.remove('selected');
     });
@@ -28,13 +40,18 @@ projectCards.forEach(function(card) {
   });
 });
 const contactButton = document.querySelector('.contact a');
-contactButton.addEventListener('click', function() {
+if (contactButton) {
+  contactButton.addEventListener('click', function() {
   console.log('Contact button clicked!');
 });
+}
+
 const topButton = document.querySelector('#topbtn');
-topButton.addEventListener('click',  function() {
+if (topButton) {
+  topButton.addEventListener('click',  function() {
   window.scrollTo({
     top: 0, 
     behavior: 'smooth'
   });
 });
+}

@@ -260,7 +260,7 @@ footer p{
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
-.project-links{
+.project-links {
    display: flex;
    gap: 15px;
    margin-top: 25px;
@@ -274,7 +274,7 @@ footer p{
     font-size: 14px;
     transition: 0.3s ease;
 }
-.project-links:hover{
+.project-button:hover{
     background: rgba(255, 80, 80,  0.15);
     box-shadow: 0 0 12px rgba(255, 80, 80, 0.3);
 }
@@ -312,4 +312,15 @@ footer p{
     background: transparent;
     color: white;
     cursor: pointer;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.project-links a.project-button,
+.contact a,
+#topbtn {
+    position: relative !important;
+    z-index: 99999 !important;
+    pointer-events: auto !important;
 }
